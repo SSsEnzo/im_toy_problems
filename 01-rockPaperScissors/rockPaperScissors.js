@@ -61,3 +61,18 @@ console.log(rockPaperScissors());
 // };
 //
 // console.log(rockPaperScissors(3));
+
+
+
+
+
+
+// var rockPaperScissors = function (num) {
+//   let result = [], temp;
+//   const rps = ['Rock', 'Paper', 'Scissors'];
+//   for ( let i = 0; i < Math.pow(3, num); i++ ) {
+//     temp = '0'.repeat(num-i.toString(3).length) + i.toString(3);
+//     temp = temp.split('').map(a => { return rps[Number(a)] });
+//     result.push(temp);
+//   }
+//   return result;

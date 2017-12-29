@@ -23,7 +23,7 @@
 */
 
 
-// using indexOf()
+// using indexOf
 Array.prototype.isSubsetOf = function(array){
   var result = true;
   for (var i = 0; i < this.length; i++){
@@ -35,7 +35,7 @@ Array.prototype.isSubsetOf = function(array){
 };
 
 
-// using includes()
+// using includes
 Array.prototype.isSubsetOf = function(array){
   var result = true;
   for (var i = 0; i < this.length; i++){

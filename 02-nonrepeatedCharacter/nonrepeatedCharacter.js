@@ -40,3 +40,17 @@ var firstNonRepeatedCharacter = function(string) {
 
 
 console.log(firstNonRepeatedCharacter('AAAACDDDDEEECDS'));
+
+
+
+// 우와
+// var firstNonRepeatedCharacter = function(string) {
+//   for ( var i = 0; i < string.length; i++ ) {
+//     if ( string.indexOf(string[i]) === string.lastIndexOf(string[i]) ) return string[i]
+//   }
+// };
+//
+// const firstNonRepeatedCharacter = string => {
+//   const arr = string.split('');
+//   return arr.filter(a => { return arr.indexOf(a) === arr.lastIndexOf(a) })[0]
+// };

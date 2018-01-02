@@ -21,6 +21,7 @@
  */
 
 var nthFibonacci = function (n) {
+<<<<<<< HEAD
   var array = [];
   var recursive = function(arr, num) {
     if (arr.length !== n && arr.length > 1) {
@@ -39,3 +40,10 @@ var nthFibonacci = function (n) {
 };
 
 console.log(nthFibonacci(6));
+=======
+  // TODO: implement me!
+};
+
+
+
+>>>>>>> ed85398fc45c41d26603702729387c6419033ce3

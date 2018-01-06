@@ -36,6 +36,7 @@ var Tree = function(value){
 };
 
 Tree.prototype.DFSelect = function(filter) {
+<<<<<<< HEAD
   var outcome = [];
   var depth = 0;
   var recursive = function(branch, depth) {
@@ -51,6 +52,8 @@ Tree.prototype.DFSelect = function(filter) {
   recursive(this, depth);
 
   return outcome;
+=======
+>>>>>>> b4149c15c7de9580e063565db57899fb4fc1fd6a
 };
 
 
@@ -108,6 +111,7 @@ Tree.prototype.removeChild = function(child){
     throw new Error("That node is not an immediate child of this tree");
   }
 };
+<<<<<<< HEAD
 
 
 
@@ -128,3 +132,5 @@ Tree.prototype.removeChild = function(child){
    //   return depth === 1;
    // })
 console.log(root1.DFSelect(function (value, depth) {return value % 2;}));
+=======
+>>>>>>> b4149c15c7de9580e063565db57899fb4fc1fd6a

@@ -15,3 +15,14 @@ var largestProductOfThree = function(array) {
 
 
 // console.log(largestProductOfThree([2, 1, 3, 10, 4, 7]));
+
+// solution
+// var largestProductOfThree = function (array) {
+//   var temp = array.sort(function (a, b) {
+//     return a - b;
+//   });
+//   var positive = array[array.length - 1] * array[array.length - 2] * array[array.length - 3];
+//   var negative = array[0] * array[1] * array[array.length - 1];
+//
+//   return positive > negative ? positive : negative;
+// };

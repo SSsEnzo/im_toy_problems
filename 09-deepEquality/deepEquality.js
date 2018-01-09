@@ -12,6 +12,7 @@
   *
   */
 var deepEquals = function(apple, orange){
+<<<<<<< HEAD
   var result = true;
   for (var key in apple) {
     if (String(apple[key]) === "[object Object]") {
@@ -24,3 +25,6 @@ var deepEquals = function(apple, orange){
 };
 
 // console.log(deepEquals({a:1, b: {c:3}},{a:1, b: {c:3}}));
+=======
+};
+>>>>>>> 0c5479362b26c981944f94c898d0b0377897d643

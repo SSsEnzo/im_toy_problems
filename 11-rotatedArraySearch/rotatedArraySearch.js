@@ -16,7 +16,7 @@
  */
 
 var rotatedArraySearch = function (rotated, target) {
-  if (target > rotated.length){
+  if (target >= rotated.length){
     return null
   } else {
     target > rotated[0] ? rotated.indexOf(target) : rotated.lastIndexOf(target)

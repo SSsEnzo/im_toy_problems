@@ -36,6 +36,22 @@ var powerSet = function(str){
 
 // console.log(powerSet('abc'));
 
-// abcdefghijklmnopqrstuwvxy
 
-// jmpu
+// other solution
+var powerSet = function(str){
+    var outcome = [];
+    var recursive = (input, num) => {
+        for (var i = 0; i < str.length; i++){
+            var char = input.slice(i, num).split('').sort().join('');
+            if (!outcome.includes(char)) {
+                outcome.push(char)
+            }
+            if (num < input.length) {
+                recursive(input, num + 1)
+            }
+        }
+
+    }
+    recursive(str, 0);
+    return outcome;
+}

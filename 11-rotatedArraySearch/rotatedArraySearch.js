@@ -16,6 +16,7 @@
  */
 
 var rotatedArraySearch = function (rotated, target) {
+<<<<<<< HEAD
   if (target >= rotated.length){
     return null
   } else {
@@ -25,3 +26,8 @@ var rotatedArraySearch = function (rotated, target) {
 
 // console.log(rotatedArraySearch([4, 5, 6, 0, 1, 2, 3], 2));
 // console.log(rotatedArraySearch([4, 5, 6, 0, 1, 2, 3], 100));
+=======
+  // Your code here:
+};
+
+>>>>>>> c3412b8713fdf020d1de070326d334754461cc4b

@@ -42,17 +42,6 @@ Tree.prototype.BFSelect = function(filter) {
 
   var outcome = [];
 
-  var firstArray = []
-
-  if (filter(this.value, 0)) {
-      outcome.push(this.value)
-  }
-  if (this.children.length > 0){
-    for (var i = 0; i < this.children.length; i++){
-      firstArray.push(this.children[i])
-    }
-  }
-
   var recursive = function(currentArray, level){
     var nextArray = [];
     if (currentArray.length > 0) {
@@ -61,15 +50,13 @@ Tree.prototype.BFSelect = function(filter) {
           outcome.push(currentArray[i].value)
         }
         if (currentArray[i].children.length > 0){
-          for (var j = 0; j < currentArray[i].children.length; j++) {
-            nextArray.push(currentArray[i].children[j])
-          }
+          nextArray.push(...currentArray[i].children)
         }
       }
       recursive(nextArray, level+1)
     }
   }
-  recursive(firstArray, 1)
+  recursive([this], 0)
 
   return outcome
 };
@@ -132,20 +119,20 @@ Tree.prototype.removeChild = function(child){
 
 
 
-  // var root1 = new Tree(1);
-  // var branch2 = root1.addChild(2);
-  // var branch3 = root1.addChild(3);
-  // var leaf4 = branch2.addChild(4);
-  // var leaf5 = branch2.addChild(5);
-  // var leaf6 = branch3.addChild(6);
-  // var leaf7 = branch3.addChild(7);
-  //
-  // console.log(root1.BFSelect(function (value, depth) {
-  //    return value % 2;
-  //   }));
-  // // [1, 3, 5, 7]
-  //
-  // console.log(root1.BFSelect(function (value, depth) {
-  //     return depth === 1;
-  //   }));
-  // // [2, 3]
+  var root1 = new Tree(1);
+  var branch2 = root1.addChild(2);
+  var branch3 = root1.addChild(3);
+  var leaf4 = branch2.addChild(4);
+  var leaf5 = branch2.addChild(5);
+  var leaf6 = branch3.addChild(6);
+  var leaf7 = branch3.addChild(7);
+
+  console.log(root1.BFSelect(function (value, depth) {
+     return value % 2;
+    }));
+  // [1, 3, 5, 7]
+
+  console.log(root1.BFSelect(function (value, depth) {
+      return depth === 1;
+    }));
+  // [2, 3]

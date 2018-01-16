@@ -7,7 +7,7 @@
  * var index = binarySearch([1, 2, 3, 4, 5], 4);
  * console.log(index); // [3]
  */
-// console.log(Math.floor(8/2));
+
 var binarySearch = function (array, target) {
 
   var recursive = function (index, target){
@@ -26,12 +26,14 @@ var binarySearch = function (array, target) {
           if (array[index] === target){
               return index
           } else {
-            if (target > array[index]) {
-                return recursive(Math.floor((array.length + index) / 2), target)
+            if (index === 0 || (index === array.length - 1 && array[index] !== target)) {
+                return -1;
+            } else if (target > array[index]) {
+                return recursive(Math.floor((array.length + index) / 2), target);
             } else if (index === 1) {
-                return recursive(0, target)
+                return recursive(0, target);
             } else {
-                return recursive(Math.floor((array.length - index) / 2), target)
+                return recursive(Math.floor((array.length - index) / 2), target);
             }
           }
       }
@@ -40,4 +42,4 @@ var binarySearch = function (array, target) {
 };
 
 
-console.log(binarySearch([1, 2, 3, 4, 5], 1));
+// console.log(binarySearch([1, 2, 3, 4, 5], 3));

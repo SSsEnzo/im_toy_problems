@@ -39,6 +39,7 @@ var Tree = function(value){
 
 Tree.prototype.BFSelect = function(filter) {
   // return an array of values for which the function filter(value, depth) returns true
+<<<<<<< HEAD
 
   var outcome = [];
 
@@ -59,6 +60,8 @@ Tree.prototype.BFSelect = function(filter) {
   recursive([this], 0)
 
   return outcome
+=======
+>>>>>>> f8cee36c1dc72c89a4372a06d3c99e95ba565b79
 };
 
 /**
@@ -114,6 +117,7 @@ Tree.prototype.removeChild = function(child){
     throw new Error("That node is not an immediate child of this tree");
   }
 };
+<<<<<<< HEAD
 
 
 
@@ -136,3 +140,5 @@ Tree.prototype.removeChild = function(child){
   //     return depth === 1;
   //   }));
   // // [2, 3]
+=======
+>>>>>>> f8cee36c1dc72c89a4372a06d3c99e95ba565b79

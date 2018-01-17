@@ -9,6 +9,7 @@
  */
 
 var binarySearch = function (array, target) {
+<<<<<<< HEAD
 
   var recursive = function (index, target){
           if (array[index] === target){
@@ -68,3 +69,7 @@ var binarySearch = function (array, target) {
 //   else return mid
 // }
 // };
+=======
+};
+
+>>>>>>> 1178bab1332c5d5c4a8847d3f8e9216d19ff56a6

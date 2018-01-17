@@ -56,5 +56,8 @@ Range.prototype.each = function (callback) {
 };
 
 Range.prototype.includes = function (val) {
-  return ((val - this.start) / this.step) === 0 ? true : false;
+  return (((val - this.start) % this.step) === 0 && val <= this.end) ? true : false;
 };
+
+// var range = new Range(2,8,2);
+// console.log(range.includes(8));

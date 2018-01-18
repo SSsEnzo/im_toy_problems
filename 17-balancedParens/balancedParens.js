@@ -24,8 +24,13 @@
  *
  */
 var balancedParens = function(input){
-  var string = input
+  var string = input.split("").filter(function(i){
+    if (i === "(" || i === ")" || i === "{" || i === "}" || i === "[" || i === "]"){
+      return i
+    }
+  }).join("")
   var arr = ["()", "{}", "[]"];
+
   while (string.includes(arr[0]) || string.includes(arr[1]) || string.includes(arr[2])){
     var str
     if (string.includes(arr[0])){
@@ -44,4 +49,4 @@ var balancedParens = function(input){
   }
 };
 
-console.log(balancedParens('[(]{)}'));
+console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }'));

@@ -44,12 +44,10 @@
  */
 
 var rotateMatrix = function(matrix) {
-  let hlength = matrix[0].length;
-  let vlength = matrix.length;
   let newMatrix = [];
-  for ( var i = 0; i < hlength; i++ ) {
+  for ( var i = 0; i < matrix[0].length; i++ ) {
     let newHorizontalLine = []
-    for ( var j = vlength-1; j >= 0; j-- ) {
+    for ( var j = matrix.length-1; j >= 0; j-- ) {
       newHorizontalLine.push(matrix[j][i])
     }
     newMatrix.push(newHorizontalLine)

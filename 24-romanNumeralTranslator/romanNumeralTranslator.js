@@ -27,6 +27,20 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral){
-// TODO: Implement me!
-
+  let arr = romanNumeral.split('');
+  let output = null
+  for ( let i = 0; i < arr.length; i++ ) {
+    if ( DIGIT_VALUES[arr[i]] === undefined ) {
+      return null
+    } else if ( i === 0 ) {
+      output = DIGIT_VALUES[arr[i]];
+    } else if ( DIGIT_VALUES[arr[i]] <= DIGIT_VALUES[arr[i - 1]] ) {
+      output = output + DIGIT_VALUES[arr[i]]
+    } else if ( DIGIT_VALUES[arr[i]] > DIGIT_VALUES[arr[i - 1]] ) {
+      output = DIGIT_VALUES[arr[i]] - output
+    }
+  }
+  return output;
 };
+
+// console.log(translateRomanNumeral("MDCCLXXVI"));

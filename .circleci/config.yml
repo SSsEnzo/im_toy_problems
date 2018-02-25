@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.4.0
+
+    working_directory: ~/my-project
+
+    steps:
+      - checkout
+
+      - run: |
+          mkdir ~/.aws
+          echo -e '[default]\naws_access_key_id = '$AWS_ACCESS_KEY_ID'\naws_secret_access_key = '$AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
+
+      - run: |
+          git clone -b solutions https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/codestates/${REPONAME}.git
+          cd ${REPONAME} && npm install
+
+      - run: |
+          find . -name '*-*' ! -name '*-*-*' -exec cp -rf {} ./${REPONAME} \;
+          # CIRCLE_PR_LASTFILE=`curl -s -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/pulls/${CIRCLE_PR_NUMBER}/files | jq '.[length-1].filename'`
+          # echo 'module.exports = '$CIRCLE_PR_LASTFILE';' >> ./${REPONAME}/prLastFile.js
+          cd ${REPONAME} && node getLastFile.js
+          npm test `cat prLastFile.js | cut -c 19-20`*
+
+      - run:
+          name: report
+          when: always
+          command: cd ${REPONAME} && node handleXML.js

@@ -10,6 +10,12 @@ var primeTester = function(n) {
     return false;
   }
   // TODO: return true if n is prime, false otherwise
+  for ( let i = 2; i < n; i++ ) {
+    if ( Math.floor( n / i ) === ( n / i ) ) {
+      return false;
+    }
+  }
+  return true;
 };
 
 /* Extra credit: Write a function that generates a list of all prime numbers

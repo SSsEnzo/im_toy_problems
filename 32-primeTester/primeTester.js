@@ -25,7 +25,14 @@ var primeTester = function(n) {
  */
 
 var primeSieve = function (start, end) {
+  // if(typeof start !== 'number' || start < 1 || start % 1 !== 0 || typeof end !== 'number' || end < 1 || end % 1 !== 0){
+  //   return console.log('parameters are not right');
+  // }
+  let result = [];
+  for ( let i = start; i <= end; i++ ) {
+    if ( primeTester(i) ) {
+      result.push(i);
+    }
+  }
+  return result;
 };
-
-
-
